@@ -50,7 +50,7 @@
 
 ```bash
 # Clone repository
-git clone <repository-url>
+git clone https://github.com/sitaramoli/planner.git
 cd planner
 
 # Install dependencies
