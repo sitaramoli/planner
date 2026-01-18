@@ -4,6 +4,7 @@ import "./globals.css";
 import { Toaster } from "sonner";
 import { ReactNode } from "react";
 import { Providers } from "@/components/Providers";
+import { Analytics } from "@vercel/analytics/next";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -35,6 +36,7 @@ export default async function RootLayout({
           <main className="min-h-screen w-full flex flex-col">{children}</main>
           <Toaster richColors={true} duration={2000} position={"top-center"} />
         </Providers>
+        <Analytics />
       </body>
     </html>
   );
