@@ -10,7 +10,7 @@ import { toast } from "sonner";
 import type { z } from "zod";
 
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Separator } from "@/components/ui/separator";
@@ -60,7 +60,7 @@ const Page = () => {
             <h1 className="text-5xl font-bold text-gray-900 leading-tight">
               Welcome back to{" "}
               <span className="bg-linear-to-r from-black to-gray-600 bg-clip-text text-transparent">
-                Planner
+                ScriptFlow
               </span>
             </h1>
             <p className="text-lg text-gray-600 leading-relaxed">
@@ -119,7 +119,7 @@ const Page = () => {
         </div>
 
         {/* Right side - Form */}
-        <div className="w-full max-w-md mx-auto lg:mx-0 animate-in fade-in slide-in-from-bottom-4 duration-500 px-4 sm:px-0">
+        <div className="w-full max-w-md mx-auto lg:mx-0 animate-in fade-in slide-in-from-bottom-4 duration-500">
           <Card className="shadow-2xl border-0 bg-white/95 backdrop-blur-sm hover:shadow-3xl transition-shadow duration-300 relative overflow-hidden">
             {/* Decorative corner accent */}
             <div className="absolute top-0 right-0 w-32 h-32 bg-linear-to-br from-black/5 to-transparent rounded-bl-full"></div>
@@ -142,12 +142,14 @@ const Page = () => {
                   </svg>
                 </div>
               </div>
-              <CardTitle className="text-3xl font-bold text-center text-gray-900 mb-2">
-                Welcome Back
-              </CardTitle>
-              <p className="text-center text-gray-600">
-                Sign in to your account to continue
-              </p>
+              <div className="text-center">
+                <h1 className="text-3xl font-bold text-gray-900 tracking-tight">
+                  Welcome to ScriptFlow
+                </h1>
+                <p className="mt-2 text-sm text-gray-600">
+                  Sign in to your account
+                </p>
+              </div>
             </CardHeader>
             <CardContent className="space-y-6">
               <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
@@ -168,7 +170,7 @@ const Page = () => {
                       className={cn(
                         "pl-10 h-12 border-gray-200 focus:border-black focus:ring-black rounded-xl",
                         errors.email &&
-                          "border-red-300 focus:border-red-500 focus:ring-red-500",
+                        "border-red-300 focus:border-red-500 focus:ring-red-500",
                       )}
                       disabled={isSubmitting}
                     />
@@ -196,7 +198,7 @@ const Page = () => {
                       className={cn(
                         "pl-10 pr-10 h-12 border-gray-200 focus:border-black focus:ring-black rounded-xl",
                         errors.password &&
-                          "border-red-300 focus:border-red-500 focus:ring-red-500",
+                        "border-red-300 focus:border-red-500 focus:ring-red-500",
                       )}
                       disabled={isSubmitting}
                     />

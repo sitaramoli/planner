@@ -1,6 +1,6 @@
-# 📋 Planner
+# 🎬 ScriptFlow
 
-> A modern task management application built with Next.js, TypeScript, and PostgreSQL. Organize your tasks, boost productivity, and achieve your goals with an intuitive planning platform.
+> A modern content creation platform built with Next.js, TypeScript, and PostgreSQL. Organize your scripts, manage your production pipeline, and streamline your workflow.
 
 ---
 
@@ -113,10 +113,13 @@ planner/
 ├── app/
 │   ├── (auth)/          # Sign in/up pages
 │   ├── (root)/          # Protected routes
-│   │   └── tasks/       # Task management
+│   │   └── scripts/     # Script management
 │   └── api/             # API routes
 ├── actions/              # Server actions
+│   ├── auth.ts          # Authentication actions
+│   └── scripts.ts       # Script CRUD operations
 ├── components/           # React components
+│   ├── scripts/         # Script-specific components
 │   └── ui/              # shadcn/ui components
 ├── db/                   # Database schema & config
 ├── lib/                  # Utilities & validations

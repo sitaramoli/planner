@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { deleteTask } from "@/actions/tasks";
+import { deleteTask } from "@/actions/scripts";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -16,11 +16,7 @@ import {
 import { Trash2, Loader2 } from "lucide-react";
 import { toast } from "sonner";
 
-interface DeleteTaskButtonProps {
-  taskId: string;
-}
-
-export function DeleteTaskButton({ taskId }: DeleteTaskButtonProps) {
+export function DeleteScriptButton({ taskId }: { taskId: string }) {
   const router = useRouter();
   const [isDeleting, setIsDeleting] = useState(false);
   const [open, setOpen] = useState(false);
@@ -30,16 +26,16 @@ export function DeleteTaskButton({ taskId }: DeleteTaskButtonProps) {
     try {
       const result = await deleteTask(taskId);
       if (result.success) {
-        toast.success("Task deleted successfully");
+        toast.success("Script deleted successfully");
         setOpen(false);
         router.push("/");
         router.refresh();
       } else {
-        toast.error(result.error || "Failed to delete task");
+        toast.error(result.error || "Failed to delete script");
       }
     } catch (error) {
-      console.error("Error deleting task: ", error);
-      toast.error("An error occurred while deleting the task");
+      console.error("Error deleting script: ", error);
+      toast.error("An error occurred while deleting the script");
     } finally {
       setIsDeleting(false);
     }
@@ -59,9 +55,9 @@ export function DeleteTaskButton({ taskId }: DeleteTaskButtonProps) {
       </DialogTrigger>
       <DialogContent>
         <DialogHeader>
-          <DialogTitle>Delete Task</DialogTitle>
+          <DialogTitle>Delete Script</DialogTitle>
           <DialogDescription>
-            Are you sure you want to delete this task? This action cannot be
+            Are you sure you want to delete this script? This action cannot be
             undone.
           </DialogDescription>
         </DialogHeader>

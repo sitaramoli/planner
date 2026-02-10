@@ -1,7 +1,7 @@
 import { redirect } from "next/navigation";
 import { auth } from "@/auth";
-import { getTaskById } from "@/actions/tasks";
-import { EditTaskForm } from "@/components/EditTaskForm";
+import { getTaskById } from "@/actions/scripts";
+import { ScriptForm } from "@/components/scripts/ScriptForm";
 
 export default async function EditTaskPage({
   params,
@@ -20,5 +20,5 @@ export default async function EditTaskPage({
     redirect("/");
   }
 
-  return <EditTaskForm task={task} />;
+  return <ScriptForm task={task} />;
 }

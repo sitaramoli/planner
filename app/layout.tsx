@@ -17,9 +17,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Planner - Task Management",
-  description:
-    "A modern task management application to organize your work and life",
+  title: "ScriptFlow",
+  description: "A content creation platform for YouTubers",
 };
 
 export default async function RootLayout({
