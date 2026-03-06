@@ -16,7 +16,9 @@ export function ScriptEditorLayout({
   return (
     <div className="flex flex-col h-screen bg-white">
       {/* Header Area */}
-      <header className="border-b bg-white px-4 sm:px-6 lg:px-8 py-3 shrink-0">{header}</header>
+      <header className="border-b bg-white px-4 sm:px-6 lg:px-8 py-3 shrink-0">
+        {header}
+      </header>
 
       {/* Main Content Area - Split View */}
       <div className="flex-1 flex overflow-hidden">
@@ -34,7 +36,7 @@ export function ScriptEditorLayout({
           <div className="p-4 border-b bg-gray-50/50 font-medium text-sm text-gray-500 uppercase tracking-wider">
             Video Details
           </div>
-          <ScrollArea className="flex-1">
+          <ScrollArea className="flex-1 overflow-auto">
             <div className="p-4 space-y-6">{sidebar}</div>
           </ScrollArea>
         </aside>

@@ -70,9 +70,9 @@ export function Editor({
   }
 
   return (
-    <div className="border rounded-lg overflow-hidden focus-within:ring-2 focus-within:ring-black focus-within:border-black">
+    <div className="border rounded-lg focus-within:ring-2 focus-within:ring-black focus-within:border-black h-200 flex flex-col overflow-hidden">
       {editable && (
-        <div className="border-b bg-gray-50 p-2 flex gap-1 flex-wrap">
+        <div className="border-b bg-gray-50 p-2 flex gap-1 flex-wrap sticky top-0 z-10 shrink-0">
           <button
             type="button"
             onClick={() => editor.chain().focus().toggleBold().run()}
@@ -200,7 +200,9 @@ export function Editor({
           </button>
         </div>
       )}
-      <EditorContent editor={editor} />
+      <div className="flex-1 overflow-auto">
+        <EditorContent editor={editor} />
+      </div>
     </div>
   );
 }
